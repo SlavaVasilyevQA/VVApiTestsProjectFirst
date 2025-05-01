@@ -65,3 +65,23 @@ CREATE_USER_DATA_SCHEME = {
     "required": [],
     "additionalProperties": False
 }
+
+UPDATE_USER_DATA_SCHEME = {
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Имя пользователя"
+        },
+        "job": {
+            "type": "string",
+            "description": "Должность пользователя"
+        },
+        "updatedAt": {
+            "type": "string",
+            "description": "Дата и время создания записи"
+        }
+    },
+    "required": [],
+    "additionalProperties": False
+}
