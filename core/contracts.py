@@ -41,3 +41,47 @@ RESOURCE_DATA_SCHEME = {
     },
     "required": ["id", "name", "year", "color", "pantone_value"]
 }
+
+CREATE_USER_DATA_SCHEME = {
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Имя пользователя"
+        },
+        "job": {
+            "type": "string",
+            "description": "Должность пользователя"
+        },
+        "id": {
+            "type": "string",
+            "description": "Уникальный идентификатор"
+        },
+        "createdAt": {
+            "type": "string",
+            "description": "Дата и время создания записи"
+        }
+    },
+    "required": [],
+    "additionalProperties": False
+}
+
+UPDATE_USER_DATA_SCHEME = {
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Имя пользователя"
+        },
+        "job": {
+            "type": "string",
+            "description": "Должность пользователя"
+        },
+        "updatedAt": {
+            "type": "string",
+            "description": "Дата и время создания записи"
+        }
+    },
+    "required": [],
+    "additionalProperties": False
+}
