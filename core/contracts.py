@@ -85,3 +85,31 @@ UPDATE_USER_DATA_SCHEME = {
     "required": [],
     "additionalProperties": False
 }
+
+REGISTER_USER_SCHEME = {
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "ID пользователя"
+        },
+        "token": {
+            "type": "string",
+            "description": "Token пользователя"
+        }
+    },
+    "required": ["id", "token"],
+    "additionalProperties": False
+}
+
+LOGIN_USER_SCHEME = {
+    "type": "object",
+    "properties": {
+        "token": {
+            "type": "string",
+            "description": "Token пользователя"
+        }
+    },
+    "required": ["token"],
+    "additionalProperties": False
+}
