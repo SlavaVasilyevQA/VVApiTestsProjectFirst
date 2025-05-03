@@ -7,6 +7,7 @@ BASE_URL = "https://reqres.in"
 LIST_USERS = "/api/users?page=2"
 SINGLE_USER = "/api/users/2"
 SINGLE_USER_NOT_FOUND = "/api/users/23"
+DELAYED_REQUEST = "/api/users?delay=3"
 EMAIL_ENDS = "@reqres.in"
 AVATAR_ENDS = "-image.jpg"
 
@@ -55,3 +56,11 @@ class TestUsers:
 
         with allure.step(f"Проверка кода ответа по запросу: {BASE_URL + SINGLE_USER_NOT_FOUND}"):
             assert response.status_code == 404
+
+    @allure.title("Проверка получения списка пользователей с задержкой по времени")
+    def test_delayed_user_list(self):
+        with allure.step(f"Делаем запрос по адресу: {BASE_URL + DELAYED_REQUEST}"):
+            response = httpx.get(BASE_URL + DELAYED_REQUEST, headers=headers, timeout=4)
+
+        with allure.step(f"Проверка кода ответа по запросу: {BASE_URL + DELAYED_REQUEST}"):
+            assert response.status_code == 200
